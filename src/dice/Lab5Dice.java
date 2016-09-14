@@ -6,27 +6,32 @@ import java.util.Scanner;
 public class Lab5Dice {
 public static void main(String[] args) {
 	
+	// Declare two rolls
 	String roll;
 	String rollAgain;
 
+	// Declare values to be randomized from two rolls
 	int value;
 	int value2;	
 	
-	// Accepting input (scan) from the user
+	// Ask for and accept input (scan) from the user
 	System.out.println("Welcome to the Grand Circus No Money Casino! Roll the dice? (y/n):");
 	Scanner scan = new Scanner(System.in);
-
+	
+	// Initialize first roll
+	roll = scan.nextLine();
+	
 	// create a randomized variable from a static method
 	Random randomValue = new Random();
 	
-	roll = scan.nextLine();
+	
 	
 	// do-while loop used for initial roll
 
 	do {
 		if (roll.equalsIgnoreCase("y")) {
 			
-			//declare and initialize randomized variables
+			//initialize randomized variables
 			value = randomValue.nextInt(6);
 			value2 = randomValue.nextInt(6);
 			System.out.println("Roll: " + (value + 1) + " and " + (value2 + 1));
@@ -39,6 +44,7 @@ public static void main(String[] args) {
 		}
 
 		System.out.println("Roll Again? (y/n)");
+		// Initialize second roll
 		rollAgain = scan.nextLine();
 		
 	}// do-while: the condition is tested after the loop is executed
